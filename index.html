@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер задач</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="new-task-bg hidden">
+        <div class="new-task-board">
+            <h3>Новая задача</h3>
+            <hr>
+
+            <div class="field">
+                <label for="new-task-name">Название:</label>
+                <input type="text" disabled placeholder="Приготовить обед" id="new-task-name" class="input">
+            </div>
+
+            <div class="field">
+                <label for="new-task-date">Выполнить до:</label>
+                <input type="date" id="new-task-date" class="input">
+            </div>
+
+            <button id="add-task-btn" class="btn">Ок</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Менеджер задач</h1>
+        </header>
+
+        <main>
+            <section class="tasks-section">
+                <h2>Все задачи</h2>
+                <div class="task-list" id="tasks">
+
+                </div>
+                <button class="btn" id="new-task-btn">Добавить задачу</button>
+            </section>
+
+            <section class="tasks-section completed">
+                <h2>Завершены</h2>
+                <div class="task-list" id="completed-tasks">
+                </div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>
