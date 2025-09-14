@@ -20,8 +20,19 @@ function getTask(card, isCompleted) {
             <span class="task-title">${card.name}</span>
             <span class="task-time">До ${card.date}</span>
         </label>
+        <button class="delete-btn" onclick="deleteTask(${card.id}, ${isCompleted})">✕</button>
     </div>
     `
+}
+
+function deleteTask(id, isCompleted) {
+    if (isCompleted) {
+        completedTasksArr = completedTasksArr.filter(el => el.id !== id);
+        renderCompletedTasks();
+    } else {
+        tasksArr = tasksArr.filter(el => el.id !== id);
+        renderTasks();
+    }
 }
 
 function renderTasks() {
@@ -45,9 +56,9 @@ function renderCompletedTasks() {
 }
 
 function completeTask(id) {
-    const currentTask = tasksArr.find(el => el.id == id)
+    const currentTask = tasksArr.find(el => el.id === id)
 
-    tasksArr = tasksArr.filter(el => el.id != id)
+    tasksArr = tasksArr.filter(el => el.id !== id)
     completedTasksArr.push(currentTask)
 
     renderTasks()
@@ -55,9 +66,9 @@ function completeTask(id) {
 }
 
 function uncompleteTask(id) {
-    const currentTask = completedTasksArr.find(el => el.id == id)
+    const currentTask = completedTasksArr.find(el => el.id === id)
 
-    completedTasksArr = completedTasksArr.filter(el => el.id != id)
+    completedTasksArr = completedTasksArr.filter(el => el.id !== id)
     tasksArr.push(currentTask)
 
     renderTasks()
