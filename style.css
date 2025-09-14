@@ -111,8 +111,25 @@ h1 {
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
+
 .btn:hover {
     background: #2980b9;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #ffece8;
 }
 
 .new-task-bg {
