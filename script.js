@@ -69,6 +69,14 @@ newTaskBtnNode.addEventListener("click", () => {
 })
 
 addTaskBtnNode.addEventListener("click", () => {
+    if (inputNameNode.value.trim() === "") {
+        inputNameNode.style.borderColor = 'red';
+
+        return;
+    }
+
+    inputNameNode.style.borderColor = '';
+
     tasksArr.push({
         id: Date.now(),
         name: inputNameNode.value,
